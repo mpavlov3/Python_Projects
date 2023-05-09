@@ -48,7 +48,7 @@ while True:
             game_results.append("You lost!")
             used_letters.clear()
     elif game_start == "results":
-        print("You lost: " + str(game_results.count("You lost!")) + ' times.')
+        print('You lost: ' + str(game_results.count("You lost!")) + ' times.')
         print("You won: " + str(game_results.count("You survived!")) + ' times.')
     elif game_start == "exit":
         break
