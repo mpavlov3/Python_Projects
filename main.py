@@ -1,7 +1,6 @@
 import random
 
 game_results = []
-used_letters = []
 print('H A N G M A N')
 
 while True:
@@ -10,6 +9,7 @@ while True:
     display = '-' * len(key)
     if game_start == "play":
         i = 0
+        used_letters = []
         while i < 8:
             print()
             print(display)
@@ -35,18 +35,16 @@ while True:
                 else:
                     print("That letter doesn't appear in the word.")
                     i += 1
-                used_letters.append(letter)
+                    used_letters.append(letter)
             if display == key:
                 print(f"You guessed the word {key}!")
                 print('You survived!')
                 game_results.append('You survived!')
-                used_letters.clear()
                 break
 
         else:
             print("You lost!")
             game_results.append("You lost!")
-            used_letters.clear()
     elif game_start == "results":
         print("You lost: " + str(game_results.count("You lost!")) + ' times.')
         print("You won: " + str(game_results.count("You survived!")) + ' times.')
