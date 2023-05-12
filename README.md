@@ -1,7 +1,4 @@
 # Python_Projects
-The first project is the popular Hangman game.
--The computer chooses a random word that you have to guess.
-
 The second project is a Loan Calculator that runs from the Terminal. The program differentiates between different types of Loans - those with differentiated payments, and those with annuity payments.It can also calculate different things, depending on the parameters that the user inputs. Below are examples of how the program can be used:
 
 > python creditcalc.py --type=diff --principal=1000000 --periods=10 --interest=10
