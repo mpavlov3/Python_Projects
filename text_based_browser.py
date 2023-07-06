@@ -25,6 +25,9 @@ def read_file(path, name):
     soup = BeautifulSoup(html_content, 'html.parser')
     # Extract and display the text content without HTML tags for each desired tag
     tags = soup.find_all(['p', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'a', 'ul', 'ol', 'li'])
+    if (len(tags) == 0):
+        print("Error: Failed to read HTML file")
+        return
     for tag in tags:
         if tag.name == 'a':
             formatted_content = f"{colorama.Fore.BLUE}{tag.get_text(strip=True)}{colorama.Style.RESET_ALL}" + '\n'
@@ -55,6 +58,9 @@ def download_page(url):
 
 
 def main():
+    if len(sys.argv) != 2:
+        print("Error: Invalid number of arguments. Provide directory as an argument.")
+        return
     directory = sys.argv[1]
     if not os.path.exists(directory):
         try:
